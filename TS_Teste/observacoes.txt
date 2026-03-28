@@ -1,0 +1,15 @@
+tsc index.ts --> compila o código do arquivo de typescript em javascript
+tsc --init --> inicia projeto TS
+
+código do projeto na pasta src
+código de javascript na pasta dist // deploy
+
+descomentar do tsconfig.json:
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+"removeComments": true --> importante, remove comentários.
+"allowJs": true --> permite javascript no projeto.
+"checkJs": true --> verifica erros no javascript.
+
+tsc --> compila

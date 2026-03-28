@@ -1,0 +1,84 @@
+vscode: eslint
+
+react: npx create-react-app project-name
+
+Estrutura:
+  
+ index.js <-- Base, imports, utilizar react no html..
+index.css <-- CSS main do programa.
+
+   App.js <-- App página inicial
+  App.css <-- Css específico do App Página Inicial - é central
+
+Conceitos:
+
+States: Uma variável, quando alterado, atualiza o componente.
+<h1>{message}</h1>
+const [var1, setVar1] = useState();
+  onClick={() => {setMessage(...);}}
+
+Criar Componente:
+
+function Component1() {
+    return <h1>Hello There!</h1>;
+}
+
+export default Component1
+
+
+Importar Componente e Usar:
+
+import Component1 from '...'
+<Component1></Component1>
+
+Exemplo 2:
+
+function Frase({texto}){
+    return( 
+        <p>
+            {texto}
+        </p>
+    )
+}
+
+export default Frase
+
+<Frase texto="Ei lá."></Frase>
+
+Props:
+
+function Pessoa(props){
+    return (
+        <div>
+            <img src={props.foto} alt={props.nome}/>
+            <h2>Nome: {props.nome}</h2>
+            <p>Idade: {props.idade}</p>
+            <p>Profissão: {props.profissao}</p>
+        </div>
+    )
+}
+
+Exemplo 2
+
+function Pessoa({foto, nome, idade, profissao}){
+    return (
+        <div>
+            <img src={foto} alt={nome}/>
+            <h2>Nome: {nome}</h2>
+            <p>Idade: {idade}</p>
+            <p>Profissão: {profissao}</p>
+        </div>
+    )
+}
+
+export default Pessoa
+
+<Pessoa nome="caio" idade=24></Pessoa>
+
+Estilização:
+
+npm install react-bootstrap bootstrap
+npm install bootswatch
+
+App.cs <-- css importável para estilizar componente específico.
+Lembrando: Class em jsx é className

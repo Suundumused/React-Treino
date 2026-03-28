@@ -1,0 +1,37 @@
+SPAs --> single page application
+Baseado em components
+JSX para renderizar HTML
+Virtual DOM -> alterações na DOM (altera o componente em tempo real)
+
+npx create-react-app my-app
+
+npm start
+Starts the development server.
+
+npm run build
+Bundles the app into static files for production.
+
+npm test
+Starts the test runner.
+
+npm run eject
+Removes this tool and copies build dependencies, configuration files
+and scripts into the app directory. If you do this, you can’t go back!
+
+props --> valores passados para os componentes, os deixa dinâmicos;
+useState --> Um hook para minipular estado do componente.
+State Lift --> usado para compartilhar state. (hierarquia).
+
+React Router --> npm install react-router-dom
+
+
+
+Principais Diferenças no React TypeScript:
+Tipagem (Segurança): TypeScript exige a definição de interfaces para props e estados, prevenindo erros comuns de passagem de dados. JavaScript é mais flexível, permitindo passar 
+qualquer tipo de dado, o que pode causar erros em produção. 
+
+Extensões de Arquivo: React com JavaScript utiliza .js ou .jsx. React com TypeScript utiliza .tsx para componentes que contêm JSX. 
+
+Experiência do Desenvolvedor (DX): TypeScript oferece autocompletar mais preciso e documentação embutida melhor no IDE, pois entende a estrutura dos dados. 
+
+Curva de Aprendizado: JavaScript é mais fácil para iniciantes. TypeScript tem uma curva de aprendizado mais acentuada devido à necessidade de tipar o código. 
