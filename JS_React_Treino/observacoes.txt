@@ -24,7 +24,7 @@ State Lift --> usado para compartilhar state. (hierarquia).
 
 React Router --> npm install react-router-dom
 
-
+react icons --> https://www.npmjs.com/package/react-icons
 
 Principais Diferenças no React TypeScript:
 Tipagem (Segurança): TypeScript exige a definição de interfaces para props e estados, prevenindo erros comuns de passagem de dados. JavaScript é mais flexível, permitindo passar 

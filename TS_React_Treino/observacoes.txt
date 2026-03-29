@@ -1,0 +1,34 @@
+npx create-react-app my-app --template typescript
+
+import { FunctionComponent, ReactNode } from "react";
+
+FunctionComponent --> Para criar usar props
+ReactNode --> Para colocar filho dentro do elemento JSX pelo pai.
+
+useEffect --> Disparar uma função somente quando for necessário.
+
+useRef
+
+Serve para guardar uma referência estável a algo.
+
+Context
+
+Serve para compartilhar dados entre componentes sem precisar passar props por vários níveis.
+
+Custom hook
+
+É uma função criada por você para reaproveitar lógica de hooks.
+Serve para evitar repetir código e deixar componentes mais limpos.
+
+forwardRef
+
+Serve para passar uma ref de um componente pai para um elemento interno do componente filho.
+Isso é útil quando o componente é personalizado, mas você ainda quer acessar o input, botão ou outro elemento real.
+
+memo
+
+Serve para evitar renderizações desnecessárias de um componente.
+Ele faz o React “lembrar” do resultado anterior e só re-renderizar se as props mudarem.
+se as props forem iguais, o componente é reaproveitado
+ajuda em componentes pesados ou muito frequentes
+não deve ser usado em tudo, porque pode adicionar complexidade sem ganho real
