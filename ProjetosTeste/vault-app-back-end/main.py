@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+from time import sleep
 
 app = Flask(__name__)
+CORS(app)
 
 data = {}
 next_id = 1
