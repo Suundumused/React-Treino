@@ -1,9 +1,24 @@
+import { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, useNavigate } from 'react-router-dom';
 
 
 export default function PublicHeader() {
+	const navigation = useNavigate();
+	const [searchInputValue, setSearchInputValue] = useState<string>("");
+
+	function search(event: React.SubmitEvent<HTMLFormElement>): void {
+		event.preventDefault();
+
+		try{
+			navigation(`/items/get/${Number(searchInputValue.replaceAll(" ", ""))}`);
+		}
+		catch{
+			setSearchInputValue("The input search must be numeric");
+		}
+	}
+
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
@@ -23,19 +38,16 @@ export default function PublicHeader() {
 								<Dropdown.Toggle className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Items</Dropdown.Toggle>
 								<Dropdown.Menu className="dropdown-menu">
 									<Link to="/items/list" className="dropdown-item" >List</Link>
-									<Link to="/items/get" className="dropdown-item" >Get</Link>
 									<Link to="/items/add" className="dropdown-item" >Add</Link>
-									<Link to="/items/edit" className="dropdown-item" >Edit</Link>
-									<Link to="/items/delete" className="dropdown-item" >Delete</Link>
 								</Dropdown.Menu>
 							</Dropdown>
 							<li className="nav-item">
 								<Link to="/about" className="nav-link" >About</Link>
 							</li>
 						</ul>
-						<form className="d-flex">
-							<input className="form-control me-sm-2" type="search" placeholder="Search" />
-							<button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+						<form className="d-flex" onSubmit={(event) => search(event)}>
+							<input value={searchInputValue} onChange={(e) => setSearchInputValue(e.target.value)} className="form-control me-sm-2" type="number" step={1} min={0} placeholder="Search" />
+							<button id="customButton1" className="btn btn-secondary my-2 my-sm-0" type="submit">Search by Id</button>
 						</form>
 					</div>
 				</div>

@@ -44,6 +44,20 @@
   animation: fadeIn 0.5s ease-in forwards; 
 }
 
+.modal-dialog {
+  background-color: black;
+  padding: 15px;
+}
+
+#customButton {
+  min-width: 100px;
+  margin: 5px;
+}
+
+#customButton1 {
+  min-width: 150px;
+}
+
 #form-button {
   width: 100%;
   margin-top: 20px;

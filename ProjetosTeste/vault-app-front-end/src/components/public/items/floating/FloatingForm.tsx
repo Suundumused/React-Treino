@@ -3,21 +3,21 @@ import { ItemModel } from "../../../../models/ItemModel";
 
 
 interface FloatingFormProps {
-    update?: boolean,
     model?: ItemModel,
     setModel: (model: ItemModel) => void,
     existsOverride:boolean,
     setExistsOverride: (state: boolean) => void,
-    submitEvent: (model: ItemModel) => void
+    submitEvent: (model: ItemModel) => void,
+    cancelEvent: () => void
 }
 
 export const FloatingForm: React.FunctionComponent<FloatingFormProps> = ({
-        update = false,
         model,
         setModel,
         existsOverride,
         setExistsOverride,
-        submitEvent
+        submitEvent,
+        cancelEvent
     }) => {
     
     const [selfExists, setSelfExists] = useState<boolean>(true);
@@ -26,13 +26,6 @@ export const FloatingForm: React.FunctionComponent<FloatingFormProps> = ({
         id: undefined,
         nome: "",
         descricao: ""
-    };
-
-    const handleInpuIdChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setModel({
-            ...safeModel!,
-            id: Number(e.target.value)
-        });
     };
 
     const handleInputNomeChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -57,6 +50,10 @@ export const FloatingForm: React.FunctionComponent<FloatingFormProps> = ({
     function setExists(state: boolean) {
         setSelfExists(state);
         setExistsOverride(state);
+
+        if (!state){
+            cancelEvent();
+        }
     }
 
     return (
@@ -64,19 +61,6 @@ export const FloatingForm: React.FunctionComponent<FloatingFormProps> = ({
             <form className="floating-form" onSubmit={(event) => submitOverride(event)}>
                 <fieldset>
                     <fieldset>
-                        {update && (
-                            <>
-                                <label className="col-form-label mt-4">Id</label>
-                                <input 
-                                    type="number"
-                                    step={1}
-                                    value={safeModel?.id}
-                                    onChange={handleInpuIdChange} 
-                                    className="form-control" 
-                                    placeholder="Id" 
-                                    id="inputDefault"/>
-                            </>
-                        )}
                         <label className="col-form-label mt-4">Name</label>
                         <input 
                             type="text" 

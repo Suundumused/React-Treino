@@ -5,7 +5,7 @@ import { delay } from '../../hooks/time/delay';
 
 import { addItem } from "../../services/itemsService";
 import { ItemModel } from '../../models/ItemModel';
-import { FloatingAlertBox } from '../../components/public/items/floating/FloatingAlertBox';
+import { FloatingAlertBox } from '../../components/public/generic/floating/FloatingAlertBox';
 import { FloatingForm } from '../../components/public/items/floating/FloatingForm';
 
 
@@ -39,6 +39,10 @@ export default function AddItem() {
 
             setLoading(false);
         })();
+    }
+
+    function cancel() {
+        navigate('/');
     }
 
     useEffect(() => {
@@ -79,6 +83,7 @@ export default function AddItem() {
                 existsOverride = {formExists}
                 setExistsOverride = {setFormExits}
                 submitEvent = {submit}
+                cancelEvent = {cancel}
             />
         </>
     );
