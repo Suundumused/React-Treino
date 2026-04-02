@@ -8,22 +8,20 @@ export default function PublicHeader () {
         <>
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container fluid>
-                    <Navbar.Brand href="#">Navbar</Navbar.Brand>
+                    <Navbar.Brand >Navbar</Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="navbar-nav-dropdown" />
 
                     <Navbar.Collapse id="navbar-nav-dropdown">
                     <Nav>
-                        <Nav.Link href="#" active>
-                            Home
-                        </Nav.Link>
-                        <Nav.Link href="#">Features</Nav.Link>
-                        <Nav.Link href="#">Pricing</Nav.Link>
+                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/partner">Partner</Link>
+                        <Link className="nav-link" to="/about">About</Link>
 
                         <NavDropdown title="Dropdown link" id="nav-dropdown">
-                        <NavDropdown.Item href="#">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
+                        <NavDropdown.Item >Action</NavDropdown.Item>
+                        <NavDropdown.Item >Another action</NavDropdown.Item>
+                        <NavDropdown.Item >Something else here</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     </Navbar.Collapse>
